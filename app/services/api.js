@@ -36,10 +36,20 @@ export const uploadImageAndGetDescription = async (base64Image) => {
   // Creates an assistant
   export const createAssistant = async (assistantName, assistantModel, assistantDescription, fileId) => {
     console.log('Creating assistant...');
+
+    let body_json;
+    if (fileId === null) {
+      console.log("fileId is null");
+      body_json = JSON.stringify({ assistantName, assistantModel, assistantDescription });
+    } else {
+      console.log("fileId is not null");
+      body_json = JSON.stringify({ assistantName, assistantModel, assistantDescription, fileId });
+    }
+
     const response = await fetch('/api/createAssistant', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ assistantName, assistantModel, assistantDescription, fileId }),
+      body: body_json,
     });
     if (!response.ok) {
       console.error('Failed to create assistant');

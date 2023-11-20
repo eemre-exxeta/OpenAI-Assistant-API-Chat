@@ -85,9 +85,9 @@ class ChatManager {
       // Upload the file
       this.state.setStatusMessage('Starting upload...');
       const fileId = file ? await prepareUploadFile(file, this.state.setStatusMessage) : null;
-      if (fileId === null) {
-        throw new Error('FileId is null');
-      } 
+      // if (fileId === null) {
+      //   throw new Error('FileId is null');
+      // } 
       this.state.setStatusMessage('Upload complete..');
 
       // Initialize the assistant

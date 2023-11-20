@@ -32,10 +32,11 @@ const openai = new OpenAI({
                 name: assistantName,
                 instructions: assistantDescription,
                 model: assistantModel,
-                tools: [{ "type": "retrieval" }],
+                tools: [],
             };
             if (fileId) {
                 assistantOptions.file_ids = [fileId];
+                assistantOptions.tools = [{ "type": "retrieval" }];
             }
 
             const assistant = await openai.beta.assistants.create(assistantOptions);

@@ -70,7 +70,7 @@ export const prepareUploadFile = async (file: File, setStatusMessage: (message: 
 * @param {string} fileId - The ID of the uploaded file associated with the assistant.
 * @returns {Promise<string>} - The ID of the created assistant.
 */
-export const initializeAssistant = async (assistantDetails: AssistantDetails, fileId: string): Promise<string> => {
+export const initializeAssistant = async (assistantDetails: AssistantDetails, fileId: string | null): Promise<string> => {
   console.log('Initializing assistant...');
   const assistantData: AssistantDataResponse = await createAssistant(
       assistantDetails.assistantName,
