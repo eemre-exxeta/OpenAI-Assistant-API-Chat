@@ -55,19 +55,17 @@ const WelcomeForm = ({
     setLastProgress(progress);
   }
 
-  console.log(assistantName, assistantDescription);
-
   return (
     <div className="border-gray-500 bg-gray-200 sm:mx-0 mx-5 mt-20 max-w-screen-md rounded-md border-2 sm:w-full">
       <div className="flex flex-col space-y-4 p-7 sm:p-10">
         <h1 className="text-lg font-semibold text-black">
-          Welcome to "<a href="https://platform.openai.com/docs/assistants/overview">OpenAI Assistant API</a>"-Wrapper!
+          Welcome to "<a href="https://platform.openai.com/docs/assistants/overview">OpenAIs Assistants API</a>"-Wrapper!
         </h1>
         <form className="flex flex-col space-y-3">
           <input
             type="text"
             placeholder="Assistant Name"
-            value={assistantName}
+            value={`${assistantName === '' ? 'AssitantAPI' : assistantName}`}
             onChange={(e) => setAssistantName(e.target.value)}
             required
             className="p-2 border border-gray-200 rounded-md"
@@ -76,7 +74,7 @@ const WelcomeForm = ({
           <input
             type="text"
             placeholder="Assistant Description"
-            value={assistantDescription}
+            value={`${assistantDescription === '' ? 'You are a helpful assistant.' : assistantDescription}`}
             onChange={(e) => setAssistantDescription(e.target.value)}
             required
             className="p-2 border border-gray-200 rounded-md"
