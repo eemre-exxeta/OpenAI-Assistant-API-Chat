@@ -58,7 +58,7 @@ const WelcomeForm = ({
     <div className="border-gray-500 bg-gray-200 sm:mx-0 mx-5 mt-20 max-w-screen-md rounded-md border-2 sm:w-full">
       <div className="flex flex-col space-y-4 p-7 sm:p-10">
         <h1 className="text-lg font-semibold text-black">
-          Welcome to Agent42!
+          Welcome to the Wrapper for OpenAI Assistant API!
         </h1>
         <form className="flex flex-col space-y-3">
           <input
@@ -123,7 +123,7 @@ const WelcomeForm = ({
                 <p className="text-gray-700 text-lg font-bold">{file.name}</p>
               </>
             ) : (
-              <p className="text-gray-500">Select a File</p>
+              <p className="text-gray-500">Select a File (optional)</p>
             )}
           </div>
 
