@@ -65,7 +65,7 @@ const WelcomeForm = ({
           <input
             type="text"
             placeholder="Assistant Name"
-            value={`${assistantName === '' ? 'AssitantAPI' : assistantName}`}
+            value={`${assistantName === '' ? 'Assitants API' : assistantName}`}
             onChange={(e) => setAssistantName(e.target.value)}
             required
             className="p-2 border border-gray-200 rounded-md"
