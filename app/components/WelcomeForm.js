@@ -55,6 +55,14 @@ const WelcomeForm = ({
     setLastProgress(progress);
   }
 
+  if (assistantName === '') {
+    assistantName = 'Assistants API';
+  }
+
+  if (assistantDescription === '') {
+    assistantDescription = 'You are a helpful assistant.';
+  }
+
   return (
     <div className="border-gray-500 bg-gray-200 sm:mx-0 mx-5 mt-20 max-w-screen-md rounded-md border-2 sm:w-full">
       <div className="flex flex-col space-y-4 p-7 sm:p-10">
@@ -65,7 +73,7 @@ const WelcomeForm = ({
           <input
             type="text"
             placeholder="Assistant Name"
-            value={`${assistantName === '' ? 'Assistants API' : assistantName}`}
+            value={assistantName}
             onChange={(e) => setAssistantName(e.target.value)}
             required
             className="p-2 border border-gray-200 rounded-md"
@@ -74,7 +82,7 @@ const WelcomeForm = ({
           <input
             type="text"
             placeholder="Assistant Description"
-            value={`${assistantDescription === '' ? 'You are a helpful assistant.' : assistantDescription}`}
+            value={assistantDescription}
             onChange={(e) => setAssistantDescription(e.target.value)}
             required
             className="p-2 border border-gray-200 rounded-md"
